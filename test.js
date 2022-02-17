@@ -1,16 +1,16 @@
-// const fibonaci = (n) => {
-//   if (n <= 2) {
-//     return 1;
-//   } else {
-//     return fibonaci(n - 1) + fibonaci(n - 2);
-//   }
-// };
+const fibonaci1 = (n) => {
+  if (n <= 2) {
+    return 1;
+  } else {
+    return fibonaci(n - 1) + fibonaci(n - 2);
+  }
+};
 
-// for (let i = 1; i <= 9; i++) {
-//   console.log(fibonaci(i));
-// }
+for (let i = 1; i <= 9; i++) {
+  console.log(fibonaci(i));
+}
 
-const fibonaci = (n) => {
+const fibonaci2 = (n) => {
   let sum = 0;
   let n1 = 1;
   let n2 = 1;
@@ -28,5 +28,5 @@ const fibonaci = (n) => {
 };
 
 for (let i = 1; i <= 8; i++) {
-  console.log(fibonaci(i));
+  console.log(fibonaci1(i));
 }
