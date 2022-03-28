@@ -47,26 +47,25 @@ const SelectionSort = (array) => {
 //Partition
 const Partition = (array, low, high) => {
   let pivot = high;
-  this.left = low;
-  this.right = high - 1;
+  let left = low;
+  let right = high - 1;
 
-  while (true) {
-    while (this.left <= this.right && array[this.left] < array[pivot])
-      this.left++;
-    while (this.right >= this.left && array[this.right] > array[pivot])
-      this.right--;
-    if (this.left >= this.right) break;
+  while (left < right) {
+    while (left <= right && array[left] < array[pivot]) left++;
+    while (right >= left && array[right] > array[pivot]) right--;
+    if (left >= right) break;
 
-    [array[this.left], array[this.right]] = [
-      array[this.right],
-      array[this.left],
-    ];
-    this.left++;
-    this.right--;
+    [array[left], array[right]] = [array[right], array[left]];
+    left++;
+    right--;
   }
 
-  [array[this.left], array[pivot]] = [array[pivot], array[this.left]];
-  return this.left;
+  console.log(`array: ${array}, left: ${left}, right: ${right}`);
+
+  [(array[left], array[pivot])] = [array[pivot], array[left]];
+
+  console.log(`array: ${array}, left: ${left}, right: ${right}`);
+  return left;
 };
 
 //Sort;
